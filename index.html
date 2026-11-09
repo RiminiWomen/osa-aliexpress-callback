@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+  OSA — Offerte Smart by Albertone
+  Pagina statica di CALLBACK per l'autorizzazione OAuth di AliExpress Affiliates API.
+
+  PRINCIPI DI SICUREZZA (volutamente rispettati):
+  - Pagina 100% statica: NESSUN JavaScript.
+  - NON legge, NON mostra, NON registra e NON trasmette il parametro `code`
+    (né qualsiasi altro parametro della query string).
+  - NESSUNA risorsa esterna (niente CDN, font, analytics, tracker).
+  - NESSUNA App Key, App Secret, token o segreto presente nel file.
+  Il codice di autorizzazione resta solo nella barra degli indirizzi del browser:
+  va letto e usato manualmente dall'operatore, in locale sul Mac, entro 3 minuti.
+-->
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>OSA · Callback autorizzazione AliExpress</title>
+  <style>
+    :root { color-scheme: light dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0f172a; color: #e2e8f0; padding: 24px;
+    }
+    .card {
+      max-width: 560px; width: 100%;
+      background: #1e293b; border: 1px solid #334155; border-radius: 16px;
+      padding: 32px 28px; box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .badge {
+      display: inline-block; font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+      color: #fbbf24; border: 1px solid #fbbf2455; border-radius: 999px; padding: 4px 12px; margin-bottom: 18px;
+    }
+    h1 { font-size: 22px; margin: 0 0 10px; }
+    p { line-height: 1.55; margin: 0 0 14px; color: #cbd5e1; }
+    ol { line-height: 1.6; color: #cbd5e1; padding-left: 20px; }
+    .note {
+      margin-top: 18px; padding: 14px 16px; border-radius: 12px;
+      background: #0b1220; border: 1px solid #334155; font-size: 14px; color: #94a3b8;
+    }
+    .foot { margin-top: 22px; font-size: 12px; color: #64748b; }
+    strong { color: #f1f5f9; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <span class="badge">OSA · Offerte Smart by Albertone</span>
+    <h1>Autorizzazione ricevuta ✅</h1>
+    <p>Questa è la pagina di <strong>callback OAuth</strong> per l'app AliExpress Affiliates API di OSA.
+       Se vedi questa schermata, il reindirizzamento dall'autorizzazione AliExpress ha funzionato.</p>
+    <ol>
+      <li>Torna all'ambiente OSA sul Mac per completare lo scambio del codice con il token.</li>
+      <li>Il <strong>codice di autorizzazione</strong> si trova nella <strong>barra degli indirizzi</strong> del browser
+          (dopo <code>?code=</code>) e scade in circa <strong>3 minuti</strong>: usalo subito.</li>
+    </ol>
+    <div class="note">
+      Per sicurezza questa pagina è <strong>statica</strong> e <strong>non legge, non mostra e non memorizza</strong>
+      il parametro <code>code</code> né alcun altro dato. Nessuna chiave o segreto è contenuto qui.
+    </div>
+    <p class="foot">Pagina tecnica — nessuna pubblicazione, nessun tracciamento.</p>
+  </main>
+</body>
+</html>
